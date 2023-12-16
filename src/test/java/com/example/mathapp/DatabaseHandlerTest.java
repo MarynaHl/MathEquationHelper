@@ -1,43 +1,40 @@
-// DatabaseHandlerTest.java
-
 package com.example.mathapp;
 
-import org.junit.jupiter.api.Test;
-
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class DatabaseHandler {
+    private static final String JDBC_URL = "jdbc:mysql://your_database_url";
+    private static final String JDBC_USER = "your_database_user";
+    private static final String JDBC_PASSWORD = "your_database_password";
 
-class DatabaseHandlerTest {
-    @Test
-    void saveEquation() {
-        DatabaseHandler databaseHandler = new DatabaseHandler();
-        MathEquation equation = new MathEquation("2*x+5=17");
-        databaseHandler.saveEquation(equation);
-
-        // Add assertions
+    public void saveEquation(MathEquation equation) {
+        // реалізація для збереження рівняння в БД
     }
 
-    @Test
-    void findEquationsByRoot() {
-        DatabaseHandler databaseHandler = new DatabaseHandler();
-        MathEquation equation = new MathEquation("2*x+5=17");
-        databaseHandler.saveEquation(equation);
-
-        List<MathEquation> equationsWithRoot = databaseHandler.findEquationsByRoot(2.0);
-
-        // Add assertions
+    public List<MathEquation> findEquationsByRoot(double root) {
+        // реалізація для пошуку рівнянь за коренем в БД
+        return new ArrayList<>();
     }
 
-    @Test
-    void getAllEquations() {
-        DatabaseHandler databaseHandler = new DatabaseHandler();
+    public List<MathEquation> getAllEquations() {
+        List<MathEquation> equations = new ArrayList<>();
 
-        // Assume that getAllEquations() returns a list of MathEquation objects
-        List<MathEquation> allEquations = databaseHandler.getAllEquations();
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM equations")) {
 
-        // Add assertions or checks on the returned list
-        assertNotNull(allEquations);
-        // Add more assertions as needed
+            while (resultSet.next()) {
+                String equationString = resultSet.getString("equation");
+                MathEquation equation = new MathEquation(equationString);
+                equations.add(equation);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return equations;
     }
 }
