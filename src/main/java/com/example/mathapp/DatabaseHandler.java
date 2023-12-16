@@ -1,20 +1,14 @@
+// DatabaseHandler.java
 package com.example.mathapp;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.util.List;
 
 public class DatabaseHandler {
-    private Connection connection;
+    // методи для роботи з БД
+    // ...
 
-    public DatabaseHandler() {
-        // Ініціалізація з'єднання з базою даних
-        try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "admin", "secret");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public List<MathEquation> findEquationsByRoot(double root) {
+        // логіка пошуку рівнянь за коренем
+        return null;
     }
-
-    // потрібно ще додати методи для взаємодії з базою даних
 }

@@ -1,15 +1,18 @@
+// DatabaseHandlerTest.java
 package com.example.mathapp;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+
+import static org.junit.Assert.assertNotNull;
 
 public class DatabaseHandlerTest {
-
     @Test
-    public void testDatabaseConnection() {
+    public void testFindEquationsByRoot() {
         DatabaseHandler databaseHandler = new DatabaseHandler();
-        assertNotNull(databaseHandler.getConnection(), "Connection should not be null");
-    }
 
-    // додати інші тести
+        //тести для методу findEquationsByRoot
+        // ...
+
+        assertNotNull(databaseHandler.findEquationsByRoot(2.0));
+    }
 }
