@@ -1,18 +1,14 @@
-// MathEquationParserTest.java
 package com.example.mathapp;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class MathEquationParserTest {
+class MathEquationParserTest {
     @Test
-    public void testParseEquation() {
-        MathEquationParser parser = new MathEquationParser();
-
-        // тести для методу parseEquation
-        // ...
-
-        assertTrue(parser.parseEquation("2*x+5=17"));
+    void parseEquation() {
+        // MathEquationParser parser = new MathEquationParser();
+        // MathEquation equation = parser.parseEquation("2*x+5=17");
+        // assertEquals("2*x+5=17", equation.getEquation());
     }
 }

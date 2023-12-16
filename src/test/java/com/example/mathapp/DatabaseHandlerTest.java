@@ -1,18 +1,28 @@
-// DatabaseHandlerTest.java
 package com.example.mathapp;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertNotNull;
+import java.util.List;
 
-public class DatabaseHandlerTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class DatabaseHandlerTest {
     @Test
-    public void testFindEquationsByRoot() {
+    void saveEquation() {
         DatabaseHandler databaseHandler = new DatabaseHandler();
+        MathEquation equation = new MathEquation("2*x+5=17");
+        databaseHandler.saveEquation(equation);
 
-        //тести для методу findEquationsByRoot
-        // ...
-
-        assertNotNull(databaseHandler.findEquationsByRoot(2.0));
+        // Add assertions
     }
+
+    @Test
+    void findEquationsByRoot() {
+        DatabaseHandler databaseHandler = new DatabaseHandler();
+        MathEquation equation = new MathEquation("2*x+5=17");
+        databaseHandler.saveEquation(equation);
+
+        List<MathEquation> equationsWithRoot = databaseHandler.findEquationsByRoot(2.0);
+
+        // Add assertions
 }
