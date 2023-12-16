@@ -19,5 +19,12 @@
             <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Залежність для MySQL JDBC Driver -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.23</version> <!-- Або останній стабільний реліз -->
+        </dependency>
     </dependencies>
 </project>
