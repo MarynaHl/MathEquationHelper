@@ -1,4 +1,5 @@
 module com.example.equations {
+	requires java.desktop;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
