@@ -2,6 +2,8 @@ package com.example.mathapp;
 
 import java.util.List;
 
+import com.example.equations.DatabaseHandler;
+
 public class MathApp {
     public static void main(String[] args) {
         DatabaseHandler databaseHandler = new DatabaseHandler();

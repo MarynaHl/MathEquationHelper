@@ -1,5 +1,7 @@
 package com.example.mathapp;
 
+import com.example.equations.DatabaseHandler;
+
 public class EquationValidator {
     private final DatabaseHandler databaseHandler;
 
