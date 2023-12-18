@@ -21,7 +21,7 @@
         <!-- Залежність для MySQL Connector/J (драйвер для роботи з базою даних MySQL) -->
         <dependency>
             <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <artifactId>mysql-connector-j</artifactId>
             <version>8.0.33</version>
         </dependency>
 
