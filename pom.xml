@@ -15,6 +15,9 @@
     </properties>
 
     <!-- Залежності проекту (бібліотеки) -->
+    <!-- ... (інші теги) -->
+
+    <!-- Залежності проекту (бібліотеки) -->
     <dependencies>
         <!-- ... (інші залежності) -->
 
@@ -32,8 +35,54 @@
             <version>5.2.1</version>
         </dependency>
 
+        <!-- Залежності для модулів, які зазначено в module-info.java -->
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>11.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dlsc.formsfx</groupId>
+            <artifactId>formsfx-core</artifactId>
+            <version>11.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.synedra</groupId>
+            <artifactId>validatorfx</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-javafx</artifactId>
+            <version>12.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.kordamp.bootstrapfx</groupId>
+            <artifactId>bootstrapfx-core</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.almasb</groupId>
+            <artifactId>fxgl</artifactId>
+            <version>17.2</version>
+        </dependency>
+
         <!-- ... (інші залежності) -->
     </dependencies>
+
+    <!-- ... (інші теги) -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <!-- Додайте інші репозиторії, якщо необхідно -->
+    </repositories>
 
     <!-- Налаштування збірки проекту -->
     <build>
