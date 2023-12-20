@@ -12,41 +12,45 @@ class EquationValidatorTest {
 
     static Stream<String> validParenthesesProvider() {
         return Stream.of(
-                "2*(x+5)",
-                "(2*x+5)",
-                "(2*5)+(x+5)",
-                "2*(x+5)-5+(x+5)",
-                "2*((x+5)-5)+(x+5)");
+            "2*(x+5)",
+            "(2*x+5)",
+            "(2*5)+(x+5)",
+            "2*(x+5)-5+(x+5)",
+            "2*((x+5)-5)+(x+5)"
+        );
     }
 
     static Stream<String> invalidParenthesesProvider() {
         return Stream.of(
-                "2*(x+5",
-                "(2*)x+5)",
-                "2*(x+5))",
-                "2*(((x+5))(x+2)",
-                "(2*((x+5))",
-                "2*(x+5))(x+2)");
+            "2*(x+5",
+            "(2*)x+5)",
+            "2*(x+5))",
+            "2*(((x+5))(x+2)",
+            "(2*((x+5))",
+            "2*(x+5))(x+2)"
+        );
     }
 
     static Stream<String> validExpressionProvider() {
         return Stream.of(
-                "2*x+5=10",
-                "-1.3*5/x=1.2",
-                "2*x=10",
-                "2*x+5+x+5=10",
-                "17=2*x+5");
+            "2*x+5=10",
+            "-1.3*5/x=1.2",
+            "2*x=10",
+            "2*x+5+x+5=10",
+            "17=2*x+5"
+        );
     }
 
     static Stream<String> invalidExpressionProvider() {
         return Stream.of(
-                "2*x+*5=10",
-                "2*x+=",
-                "2*x+5+x+5=10+",
-                "17=2*x+5/0",
-                "2*x+5++x=10",
-                "x*3-(2+5)=",
-                "2*x+5-(x=10)");
+            "2*x+*5=10",
+            "2*x+=",
+            "2*x+5+x+5=10+",
+            "17=2*x+5/0",
+            "2*x+5++x=10",
+            "x*3-(2+5)=",
+            "2*x+5-(x=10)"
+        );
     }
 
     @ParameterizedTest
@@ -73,3 +77,5 @@ class EquationValidatorTest {
         assertFalse(EquationValidator.isExpressionValid(equation));
     }
 }
+
+

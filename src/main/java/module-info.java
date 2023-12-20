@@ -1,5 +1,4 @@
 module com.example.equations {
-	requires java.desktop;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
@@ -12,6 +11,5 @@ module com.example.equations {
     requires MathParser.org.mXparser;
 
     opens com.example.equations to javafx.fxml;
-
     exports com.example.equations;
 }

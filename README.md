@@ -1,34 +1,58 @@
-Тестове завдання – курси Java Basic+
-“Математичний помічник”
+# Math Equation Helper
 
-Ви отримали завдання розробити прототип застосування, яке допомагатиме
-вчителю математики. Застосування повинне надавати такі можливості:
+This Java application assists math teachers by providing a user interface for inputting, validating, and storing mathematical equations and their roots. The application uses JavaFX for the user interface and interacts with a MySQL database to store equations and associated roots.
 
-1. Вводити математичні рівняння, що містять числа (цілі, або десяткові дроби), а
-   також математичні операції +, -, \*, / та круглі дужки, рівень вкладеності дужок
-   – довільний. У всіх рівняннях невідома величина позначається англійською
-   літерою x.
-2. Перевіряти введене рівняння на коректність розміщення дужок.
-3. Перевіряти коректність введеного виразу (не повинно бути 2 знаків
-   математичних операцій поспіль, наприклад, неприпустимий вираз 3+_4, в той
-   же час, вираз 4_-7 є допустимим).
-   Приклади коректних рівнянь:
-   2*x+5=17, -1.3*5/x=1.2, 2*x*x=10, 2*(x+5+х)+5=10, 17=2*x+5
-4. Якщо рівняння є коректним, зберегти його у БД.
-5. Надати можливість ввести корені рівняння, під час введення перевіряти, чи є
-   задане число коренем, і якщо так – зберігати його в БД.
-6. Реалізувати функції пошуку рівнянь у БД за їхніми коренями. Наприклад,
-   можливий запит: знайти всі рівняння, що мають один із зазначених коренів або
-   знайти всі рівняння, які мають рівно один корінь, збережений у БД.
-7. Проєкт має бути реалізований з використанням системи збирання Maven
-8. Проєкт має бути завантажений у репозиторій GitHub та надано посилання для
-   його отримання. Також допустимо надіслати архів із проєктом.
-   Примітки.
-   • У роботі використовувати Java 11/17/21.
-   • Рекомендується використання таких СУБД: MySQL, MariaDB чи
-   PostgreSQL.
-   • Проєкт повинен містити модульні тести із використанням JUnit та/або
-   інших засобів тестування.
-   • Число вважаємо коренем рівняння, якщо при підстановці цього числа
-   замість всіх входжень x, різниця між значеннями лівої та правої частин
-   рівняння не перевищує 10 -9
+## Prerequisites
+
+- Java Development Kit (JDK) 17 (https://gluonhq.com/products/javafx/)
+- MySQL database (with a pre-created database named 'equations')
+- Maven
+
+## Installation and Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/math-equation-helper.git
+cd math-equation-helper
+```
+
+2. Configure the database connection in `src/main/resources/application.properties`.
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/equations
+spring.datasource.username=yourusername
+spring.datasource.password=yourpassword
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+```
+
+3. Build and run the application using Maven:
+
+```bash
+mvn clean javafx:run
+```
+
+## Features
+
+- Input and validation of mathematical equations
+- Validation of parentheses placement
+- Validation of correct expression format
+- Input and storage of equation roots
+- Search for equations based on roots
+- JavaFX user interface for easy interaction
+
+## Usage
+
+1. Enter a mathematical equation in the input field, e.g., `2*x + 5 = 17`.
+2. Enter the roots of the equation separated by commas, e.g., `3, 7, -1`.
+3. Click the "Check" button to validate the equation, its parentheses, expression format, and roots.
+4. Click the "Search by Root" button to find equations with a specific root.
+5. Validated equations and search results are displayed in the list view.
+
+## Contributing
+
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
+
+---
+
+Please note that you need to replace `'yourusername'` and `'yourpassword'` in the configuration with your actual MySQL credentials. Make sure you have set up your MySQL database with the necessary tables as mentioned in your code.

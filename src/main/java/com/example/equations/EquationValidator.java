@@ -28,7 +28,8 @@ public class EquationValidator {
     }
 
     public static boolean isExpressionValid(String equation) {
-        String pattern = "^(?=.*[0-9xX])(?!.*[-+*/()=]{2})(?!.*\\/\\s*0\\s*(?![0-9xX]))[-+*/()0-9xX=\\.\\s]+(?<=[0-9xX)])$";
+        String pattern =
+            "^(?=.*[0-9xX])(?!.*[-+*/()=]{2})(?!.*\\/\\s*0\\s*(?![0-9xX]))[-+*/()0-9xX=\\.\\s]+(?<=[0-9xX)])$";
 
         Pattern regex = Pattern.compile(pattern);
         Matcher matcher = regex.matcher(equation);
@@ -46,3 +47,4 @@ public class EquationValidator {
     }
 
 }
+

@@ -13,7 +13,7 @@ public class DBConfig {
 
     static {
         try (InputStream inputStream = DBConfig.class.getClassLoader()
-                .getResourceAsStream(PROPERTIES_FILE)) {
+            .getResourceAsStream(PROPERTIES_FILE)) {
             properties.load(inputStream);
         } catch (IOException e) {
             Logger.getLogger(DBConfig.class.getName()).log(Level.SEVERE, null, e);
@@ -36,3 +36,4 @@ public class DBConfig {
         return properties.getProperty("db.password");
     }
 }
+

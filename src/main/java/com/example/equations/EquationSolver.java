@@ -24,15 +24,16 @@ public class EquationSolver {
             return leftPart + "-1*(" + rightPart + ")";
         } else {
             throw new IllegalArgumentException(
-                    "Некоректне рівняння: " + originalEquation);
+                "Некоректне рівняння: " + originalEquation);
         }
     }
 
     public static double calculateEquationValue(String equation,
-            double xValue) {
+        double xValue) {
         License.iConfirmNonCommercialUse("Andriy Barskyi");
         Argument argument = new Argument("x = " + xValue);
-        Expression expression = new Expression(convertEquation(equation), argument);
+        Expression expression =
+            new Expression(convertEquation(equation), argument);
         return expression.calculate();
     }
 

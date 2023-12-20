@@ -14,6 +14,7 @@ public class DatabaseManager {
     private static final String DB_USER = DBConfig.getDbUsername();
     private static final String DB_PASSWORD = DBConfig.getDbPassword();
 
+
     public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
             connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
@@ -27,3 +28,4 @@ public class DatabaseManager {
         }
     }
 }
+

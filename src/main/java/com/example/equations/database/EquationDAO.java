@@ -15,11 +15,12 @@ public class EquationDAO {
     }
 
     public static void insertEquationAndRoots(String equation, String roots)
-            throws SQLException {
-        String insertQuery = "INSERT INTO equations (equation, roots) VALUES (?, ?) ";
+        throws SQLException {
+        String insertQuery =
+            "INSERT INTO equations (equation, roots) VALUES (?, ?) ";
         try (Connection connection = DatabaseManager.getConnection();
-                PreparedStatement preparedStatement = connection.prepareStatement(
-                        insertQuery)) {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                insertQuery)) {
             preparedStatement.setString(1, equation);
             preparedStatement.setString(2, roots);
             preparedStatement.executeUpdate();
@@ -32,9 +33,9 @@ public class EquationDAO {
         List<String> equations = new ArrayList<>();
         String findQuery = "SELECT equation, roots FROM equations";
         try (Connection connection = DatabaseManager.getConnection();
-                PreparedStatement preparedStatement = connection.prepareStatement(
-                        findQuery);
-                ResultSet resultSet = preparedStatement.executeQuery()) {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                findQuery);
+            ResultSet resultSet = preparedStatement.executeQuery()) {
             while (resultSet.next()) {
                 String rootsString = resultSet.getString("roots");
                 String[] rootsArray = rootsString.split(",\\s*");
@@ -57,8 +58,8 @@ public class EquationDAO {
     public static boolean equationExists(String equation) {
         String checkQuery = "SELECT COUNT(*) FROM equations WHERE equation = ?";
         try (Connection connection = DatabaseManager.getConnection();
-                PreparedStatement preparedStatement = connection.prepareStatement(
-                        checkQuery)) {
+            PreparedStatement preparedStatement = connection.prepareStatement(
+                checkQuery)) {
             preparedStatement.setString(1, equation);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {

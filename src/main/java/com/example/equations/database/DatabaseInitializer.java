@@ -12,14 +12,15 @@ public class DatabaseInitializer {
 
     public static void createTables() throws SQLException {
         try (Connection connection = DatabaseManager.getConnection();
-                Statement statement = connection.createStatement()) {
+            Statement statement = connection.createStatement()) {
             String createTableQuery = "CREATE TABLE IF NOT EXISTS equations ("
-                    + "id INT AUTO_INCREMENT PRIMARY KEY,"
-                    + "equation VARCHAR(255) NOT NULL UNIQUE ,"
-                    + "roots VARCHAR(255) NOT NULL);";
+                + "id INT AUTO_INCREMENT PRIMARY KEY,"
+                + "equation VARCHAR(255) NOT NULL UNIQUE ,"
+                + "roots VARCHAR(255) NOT NULL);";
             statement.executeUpdate(createTableQuery);
         } catch (SQLException e) {
             throw new SQLException("Failed to create tables.");
         }
     }
 }
+

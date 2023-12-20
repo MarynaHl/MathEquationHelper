@@ -45,14 +45,14 @@ public class EquationController {
 
             if (EquationDAO.equationExists(equation)) {
                 AlertManager.showErrorAlert(
-                        "Рівняння з таким виразом вже існує.");
+                    "Рівняння з таким виразом вже існує.");
                 return;
             }
 
             try {
                 EquationDAO.insertEquationAndRoots(equation, roots);
                 AlertManager.showInfoAlert("Успіх",
-                        "Вираз був успішно доданий.");
+                    "Вираз був успішно доданий.");
             } catch (SQLException e) {
                 e.printStackTrace();
                 throw new RuntimeException(e);
@@ -79,7 +79,7 @@ public class EquationController {
     private boolean validateEquation(String equation) {
         if (!EquationValidator.isParenthesesValid(equation)) {
             AlertManager.showErrorAlert(
-                    "Некоректне розміщення дужок у рівнянні.");
+                "Некоректне розміщення дужок у рівнянні.");
             return false;
         }
 
@@ -101,9 +101,10 @@ public class EquationController {
     }
 
     private boolean isRootValidForEquation(String equation, double root) {
-        if (Math.abs(EquationSolver.calculateEquationValue(equation, root)) > DELTA) {
+        if (Math.abs(EquationSolver.calculateEquationValue(equation, root))
+            > DELTA) {
             AlertManager.showErrorAlert(
-                    "Число " + root + " не є коренем для цього рівняння.");
+                "Число " + root + " не є коренем для цього рівняння.");
             return false;
         }
         return true;

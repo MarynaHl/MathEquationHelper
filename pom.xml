@@ -1,124 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <!-- Загальна інформація про проект -->
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId> <!-- Ідентифікатор групи, якій належить проект -->
-    <artifactId>MathEquationHelper</artifactId> <!-- Ідентифікатор артефакту (назва проекту) -->
-    <version>1.0-SNAPSHOT</version> <!-- Версія проекту -->
-    <name>MathEquationHelper</name>
 
-    <!-- Властивості проекту -->
+    <groupId>com.example</groupId>
+    <artifactId>Equations</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>Equations</name>
+
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- Кодування файлів проекту -->
-        <junit.jupiter.version>5.10.0</junit.jupiter.version> <!-- Версія JUnit Jupiter (бібліотека для тестування) -->
-        <junit.platform.version>1.10.0</junit.platform.version> <!-- Версія JUnit Platform -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <junit.jupiter.version>5.10.0</junit.jupiter.version>
+        <junit.platform.version>1.10.0</junit.platform.version>
     </properties>
 
-    <!-- Залежності проекту (бібліотеки) -->
-    <!-- ... (інші теги) -->
-
-    <!-- Залежності проекту (бібліотеки) -->
     <dependencies>
-        <!-- ... (інші залежності) -->
-
-        <!-- Залежність для MySQL Connector/J (драйвер для роботи з базою даних MySQL) -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.33</version>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>17.0.6</version>
         </dependency>
-
-        <!-- Залежність для бібліотеки MathParser.org-mXparser -->
         <dependency>
-            <groupId>org.mariuszgromada.math</groupId>
-            <artifactId>MathParser.org-mXparser</artifactId>
-            <version>5.2.1</version>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>17.0.6</version>
         </dependency>
-
-        <!-- Залежності для модулів, які зазначено в module-info.java -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-web</artifactId>
+            <version>17.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>17.0.6</version>
+        </dependency>
         <dependency>
             <groupId>org.controlsfx</groupId>
             <artifactId>controlsfx</artifactId>
             <version>11.1.2</version>
         </dependency>
-
         <dependency>
             <groupId>com.dlsc.formsfx</groupId>
             <artifactId>formsfx-core</artifactId>
             <version>11.6.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-
         <dependency>
             <groupId>net.synedra</groupId>
             <artifactId>validatorfx</artifactId>
             <version>0.4.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-javafx</artifactId>
             <version>12.3.1</version>
         </dependency>
-
         <dependency>
             <groupId>org.kordamp.bootstrapfx</groupId>
             <artifactId>bootstrapfx-core</artifactId>
             <version>0.4.0</version>
         </dependency>
-
         <dependency>
             <groupId>com.github.almasb</groupId>
             <artifactId>fxgl</artifactId>
             <version>17.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-
-        <!-- ... (інші залежності) -->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+        <dependency>
+            <groupId>org.livetribe</groupId>
+            <artifactId>livetribe-jsr223</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mariuszgromada.math</groupId>
+            <artifactId>MathParser.org-mXparser</artifactId>
+            <version>5.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <version>${junit.platform.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
-    <!-- ... (інші теги) -->
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo.maven.apache.org/maven2</url>
-        </repository>
-        <!-- Додайте інші репозиторії, якщо необхідно -->
-    </repositories>
-
-    <!-- Налаштування збірки проекту -->
     <build>
         <plugins>
-            <!-- Плагін для компіляції коду проекту -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>17</source> <!-- Версія JDK, яку використовує проект -->
-                    <target>17</target> <!-- Версія JDK, для якої буде згенерований байт-код -->
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
-
-            <!-- Плагін для запуску тестів -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
             </plugin>
-
-            <!-- Плагін для налаштування JavaFX (запуску, пакування) -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <executions>
                     <execution>
-                        <!-- Налаштування для запуску додатку JavaFX -->
+                        <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
                                 com.example.equations/com.example.equations.EquationApplication
                             </mainClass>
-                            <!-- ... (інші налаштування) -->
+                            <launcher>app</launcher>
+                            <jlinkZipName>app</jlinkZipName>
+                            <jlinkImageName>app</jlinkImageName>
+                            <noManPages>true</noManPages>
+                            <stripDebug>true</stripDebug>
+                            <noHeaderFiles>true</noHeaderFiles>
                         </configuration>
                     </execution>
                 </executions>
