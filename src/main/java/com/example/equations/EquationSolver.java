@@ -30,7 +30,7 @@ public class EquationSolver {
 
     public static double calculateEquationValue(String equation,
         double xValue) {
-        License.iConfirmNonCommercialUse("Andriy Barskyi");
+        License.iConfirmNonCommercialUse("Maryna Hlushak");
         Argument argument = new Argument("x = " + xValue);
         Expression expression =
             new Expression(convertEquation(equation), argument);
