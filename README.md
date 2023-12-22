@@ -157,3 +157,80 @@ public class EquationRepositoryTest {
 
 }
 ```
+
+# POM-файл для Maven-проекту
+
+## Огляд
+
+POM-файл (Project Object Model) визначає структуру проекту, залежності від бібліотек та плагінів Maven.
+
+## JavaFX Залежності
+
+- **javafx-controls, javafx-fxml, javafx-web, javafx-media:**
+  - Надають JavaFX-компоненти для створення графічного інтерфейсу користувача, обробки подій, роботи з мультимедіа і т. д.
+
+## ControlsFX
+
+- **controlsfx:**
+  - Бібліотека для розширення стандартних компонентів JavaFX, яка надає додаткові елементи керування і можливості.
+
+## FormsFX
+
+- **formsfx-core:**
+  - Бібліотека для створення форм в JavaFX-додатках з використанням моделей даних та байндингу.
+
+## ValidatorFX
+
+- **validatorfx:**
+  - Бібліотека для валідації форм JavaFX з можливістю вказувати правила валідації.
+
+## Ikonli
+
+- **ikonli-javafx:**
+  - Бібліотека для відображення векторних іконок в JavaFX-додатках.
+
+## BootstrapFX
+
+- **bootstrapfx-core:**
+  - Бібліотека, яка надає стилізацію для JavaFX, використовуючи Bootstrap CSS.
+
+## FXGL
+
+- **fxgl:**
+  - Ігровий двигун для JavaFX, спрощує створення 2D-ігор.
+
+## MySQL Connector
+
+- **mysql-connector-j:**
+  - Драйвер для взаємодії з базою даних MySQL з Java-додатками.
+
+## LiveTribe JSR-223
+
+- **livetribe-jsr223:**
+  - Реалізація JSR-223, яка надає підтримку для взаємодії з движками скриптів в Java.
+
+## mXparser
+
+- **MathParser.org-mXparser:**
+  - Бібліотека для обчислення математичних виразів і формул.
+
+## JUnit 5
+
+- **junit-jupiter-engine, junit-jupiter-api, junit-jupiter-params:**
+  - Бібліотека для написання і запуску тестів в Java.
+
+## JUnit Platform
+
+- **junit-platform-suite:**
+  - Платформа для запуску тестів в Java.
+
+## Maven Plugins
+
+- **maven-compiler-plugin:**
+  - Плагін для Maven, конфігурація компілятора Java.
+- **maven-surefire-plugin:**
+
+  - Плагін для запуску тестів в Maven.
+
+- **javafx-maven-plugin:**
+  - Плагін для Maven, підтримка для JavaFX-додатків, зокрема, для збірки і запуску.
