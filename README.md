@@ -1,18 +1,34 @@
-mvn clean javafx:run
+#Етап 1: Запроектування структури проєкту
 
-## Features
+Крок 1: Відкриття Eclipse та створення нового проєкту
+Запустіть Eclipse.
+Оберіть робочий простір (workspace) або створіть новий.
+Виберіть "File" -> "New" -> "Other".
+Оберіть "Maven" -> "Maven Project" та натисніть "Next".
 
-- Input and validation of mathematical equations
-- Validation of parentheses placement
-- Validation of correct expression format
-- Input and storage of equation roots
-- Search for equations based on roots
-- JavaFX user interface for easy interaction
+Крок 2: Вибір архетипу
+Оберіть "Create a simple project (skip archetype selection)" та натисніть "Next".
+Введіть GroupId (наприклад, com.example) та ArtifactId (наприклад, math-helper) і натисніть "Finish".
 
-## Usage
+Крок 3: Додавання модулів
+У вікні "Project Explorer", праворуч клікніть правою кнопкою миші на папку проєкту і оберіть "New" -> "Module".
+Створіть модулі для різних частин функціоналу (наприклад, equation-input, equation-validation, database, search) і натисніть "Finish".
 
-1. Enter a mathematical equation in the input field, e.g., `2*x + 5 = 17`.
-2. Enter the roots of the equation separated by commas, e.g., `3, 7, -1`.
-3. Click the "Check" button to validate the equation, its parentheses, expression format, and roots.
-4. Click the "Search by Root" button to find equations with a specific root.
-5. Validated equations and search results are displayed in the list view.
+#Етап 2: Реалізація введення рівнянь
+Крок 1: Створення класу для рівнянь
+У папці equation-input створіть новий пакет (наприклад, com.example.mathhelper.equationinput).
+Створіть клас Equation для представлення математичного рівняння.
+Крок 2: Реалізація методу для введення рівнянь
+Додайте метод у клас Equation, який приймає рядок рівняння та виконує розбір рядка для визначення правильності та невідомих.
+Використовуйте регулярні вирази або інші методи для обробки введення.
+Крок 3: Додавання перевірки коректності
+У папці equation-validation створіть пакет (наприклад, com.example.mathhelper.equationvalidation).
+Створіть клас EquationValidator, який буде містити методи для перевірки коректності рівнянь та виразів.
+
+#Етап 3: Перевірка коректності дужок та виразу
+Крок 1: Розробка функцій для перевірки дужок
+В EquationValidator, додайте метод для перевірки коректності використання дужок у рівнянні.
+Використовуйте стек або інші структури даних для визначення правильності використання дужок.
+Крок 2: Реалізація перевірки коректності виразу
+Додайте метод для перевірки коректності введеного виразу в EquationValidator.
+Використовуйте регулярні вирази або інші методи для виявлення двох знаків операцій поспіль.
