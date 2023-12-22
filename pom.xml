@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- The XML declaration specifying the version and encoding of the POM file -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Maven POM file with XML namespace declarations and schema location -->
+
     <modelVersion>4.0.0</modelVersion>
+    <!-- Maven model version -->
 
     <groupId>com.example</groupId>
+    <!-- Maven project group identifier -->
+
     <artifactId>Equations</artifactId>
+    <!-- Maven project artifact identifier -->
+
     <version>1.0-SNAPSHOT</version>
+    <!-- Maven project version -->
+
     <name>Equations</name>
+    <!-- Maven project name -->
 
     <properties>
+        <!-- Maven properties for configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Encoding of the source files -->
         <junit.jupiter.version>5.10.0</junit.jupiter.version>
+        <!-- JUnit Jupiter version -->
         <junit.platform.version>1.10.0</junit.platform.version>
+        <!-- JUnit Platform version -->
     </properties>
 
     <dependencies>
+        <!-- Maven project dependencies -->
+
+        <!-- JavaFX dependencies -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -34,11 +53,15 @@
             <artifactId>javafx-media</artifactId>
             <version>17.0.6</version>
         </dependency>
+
+        <!-- ControlsFX dependency -->
         <dependency>
             <groupId>org.controlsfx</groupId>
             <artifactId>controlsfx</artifactId>
             <version>11.1.2</version>
         </dependency>
+
+        <!-- FormsFX dependency -->
         <dependency>
             <groupId>com.dlsc.formsfx</groupId>
             <artifactId>formsfx-core</artifactId>
@@ -50,6 +73,8 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- ValidatorFX dependency -->
         <dependency>
             <groupId>net.synedra</groupId>
             <artifactId>validatorfx</artifactId>
@@ -61,16 +86,22 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!-- Ikonli dependency -->
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-javafx</artifactId>
             <version>12.3.1</version>
         </dependency>
+
+        <!-- BootstrapFX dependency -->
         <dependency>
             <groupId>org.kordamp.bootstrapfx</groupId>
             <artifactId>bootstrapfx-core</artifactId>
             <version>0.4.0</version>
         </dependency>
+
+        <!-- FXGL dependency -->
         <dependency>
             <groupId>com.github.almasb</groupId>
             <artifactId>fxgl</artifactId>
@@ -82,22 +113,29 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+
+        <!-- MySQL Connector Java dependency -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.0.33</version>
         </dependency>
+
+        <!-- LiveTribe JSR223 dependency -->
         <dependency>
             <groupId>org.livetribe</groupId>
             <artifactId>livetribe-jsr223</artifactId>
             <version>2.0.3</version>
         </dependency>
+
+        <!-- MathParser.org-mXparser dependency -->
         <dependency>
             <groupId>org.mariuszgromada.math</groupId>
             <artifactId>MathParser.org-mXparser</artifactId>
             <version>5.2.1</version>
         </dependency>
+
+        <!-- JUnit Jupiter dependencies for testing -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -116,6 +154,8 @@
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- JUnit Platform Suite dependency for testing -->
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
@@ -125,36 +165,51 @@
     </dependencies>
 
     <build>
+        <!-- Maven build configuration -->
+
         <plugins>
+            <!-- Maven plugins configuration -->
+
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
+                    <!-- Java source and target version -->
                     <source>17</source>
                     <target>17</target>
                 </configuration>
             </plugin>
+
+            <!-- Maven Surefire Plugin for running tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
             </plugin>
+
+            <!-- JavaFX Maven Plugin for packaging and running JavaFX applications -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <executions>
+                    <!-- Execution configuration for running JavaFX application -->
                     <execution>
-                        <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
+                        <!-- Default configuration for running with: mvn clean javafx:run -->
                         <configuration>
+                            <!-- Main class of the JavaFX application -->
                             <mainClass>
                                 com.example.equations/com.example.equations.EquationApplication
                             </mainClass>
+                            <!-- Name of the launcher -->
                             <launcher>app</launcher>
+                            <!-- Name of the jlink zip and image -->
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
+                            <!-- Skip generation of man pages, debug info, and header files -->
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
                             <noHeaderFiles>true</noHeaderFiles>
