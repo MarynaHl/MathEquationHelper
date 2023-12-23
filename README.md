@@ -233,4 +233,49 @@ POM-файл (Project Object Model) визначає структуру прое
   - Плагін для запуску тестів в Maven.
 
 - **javafx-maven-plugin:**
+
   - Плагін для Maven, підтримка для JavaFX-додатків, зокрема, для збірки і запуску.
+
+  POM-файл визначає структуру проекту, його залежності від інших бібліотек і плагінів Maven. Давайте розглянемо детально кожну залежність вказану в цьому POM-файлі:
+
+JavaFX Dependencies:
+
+javafx-controls, javafx-fxml, javafx-web, javafx-media: Ці бібліотеки надають JavaFX-компоненти для створення графічного інтерфейсу користувача (GUI), обробки подій, роботи з мультимедіа і т. д.
+ControlsFX:
+
+controlsfx: ControlsFX - це бібліотека для розширення стандартних компонентів JavaFX, яка надає додаткові елементи керування і можливості.
+FormsFX:
+
+formsfx-core: FormsFX - це бібліотека для створення форм в JavaFX-додатках з використанням моделей даних та байндингу.
+ValidatorFX:
+
+validatorfx: ValidatorFX - це бібліотека для валідації форм JavaFX з можливістю вказувати правила валідації.
+Ikonli:
+
+ikonli-javafx: Ikonli - це бібліотека для відображення векторних іконок в JavaFX-додатках.
+BootstrapFX:
+
+bootstrapfx-core: BootstrapFX - це бібліотека, яка надає стилізацію для JavaFX, використовуючи Bootstrap CSS.
+FXGL:
+
+fxgl: FXGL - це ігровий двигун для JavaFX, який спрощує створення 2D-ігор.
+MySQL Connector:
+
+mysql-connector-j: MySQL Connector - це драйвер для взаємодії з базою даних MySQL з Java-додатками.
+LiveTribe JSR-223:
+
+livetribe-jsr223: LiveTribe JSR-223 - це реалізація JSR-223, яка надає підтримку для взаємодії з движками скриптів в Java.
+mXparser:
+
+MathParser.org-mXparser: mXparser - це бібліотека для обчислення математичних виразів і формул.
+JUnit 5:
+
+junit-jupiter-engine, junit-jupiter-api, junit-jupiter-params: JUnit 5 - це бібліотека для написання і запуску тестів в Java. Вказані залежності використовуються для тестування.
+JUnit Platform:
+
+junit-platform-suite: JUnit Platform - це платформа для запуску тестів в Java.
+Maven Plugins:
+
+maven-compiler-plugin: Плагін для Maven, який надає конфігурацію компілятора Java.
+maven-surefire-plugin: Плагін для запуску тестів в Maven.
+javafx-maven-plugin: Плагін для Maven, який надає підтримку для JavaFX-додатків, зокрема, для збірки і запуску.
