@@ -1,28 +1,28 @@
-// package com.example.equations.database;
+package com.example.equations.database;
 
-// import java.sql.Connection;
-// import java.sql.SQLException;
-// import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-// public class DatabaseInitializer {
+public class DatabaseInitializer {
 
-//     private DatabaseInitializer() {
+    private DatabaseInitializer() {
 
-//     }
+    }
 
-//     public static void createTables() throws SQLException {
-//         try (Connection connection = DatabaseManager.getConnection();
-//                 Statement statement = connection.createStatement()) {
-//             String createTableQuery = "CREATE TABLE IF NOT EXISTS equations ("
-//                     + "id INT AUTO_INCREMENT PRIMARY KEY,"
-//                     + "equation VARCHAR(255) NOT NULL UNIQUE ,"
-//                     + "roots VARCHAR(255) NOT NULL);";
-//             statement.executeUpdate(createTableQuery);
-//         } catch (SQLException e) {
-//             throw new SQLException("Failed to create tables.");
-//         }
-//     }
-// }
+    public static void createTables() throws SQLException {
+        try (Connection connection = DatabaseManager.getConnection();
+                Statement statement = connection.createStatement()) {
+            String createTableQuery = "CREATE TABLE IF NOT EXISTS equations ("
+                    + "id INT AUTO_INCREMENT PRIMARY KEY,"
+                    + "equation VARCHAR(255) NOT NULL UNIQUE ,"
+                    + "roots VARCHAR(255) NOT NULL);";
+            statement.executeUpdate(createTableQuery);
+        } catch (SQLException e) {
+            throw new SQLException("Failed to create tables.");
+        }
+    }
+}
 
 // /**
 //  * Клас DatabaseInitializer відповідає за ініціалізацію бази даних для
