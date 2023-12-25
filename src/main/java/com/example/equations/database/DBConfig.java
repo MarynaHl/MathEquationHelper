@@ -1,41 +1,41 @@
-// package com.example.equations.database;
+package com.example.equations.database;
 
-// import java.io.IOException;
-// import java.io.InputStream;
-// import java.util.Properties;
-// import java.util.logging.Level;
-// import java.util.logging.Logger;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-// public class DBConfig {
+public class DBConfig {
 
-//     private static final String PROPERTIES_FILE = "database.properties";
-//     private static final Properties properties = new Properties();
+    private static final String PROPERTIES_FILE = "database.properties";
+    private static final Properties properties = new Properties();
 
-//     static {
-//         try (InputStream inputStream = DBConfig.class.getClassLoader()
-//             .getResourceAsStream(PROPERTIES_FILE)) {
-//             properties.load(inputStream);
-//         } catch (IOException e) {
-//             Logger.getLogger(DBConfig.class.getName()).log(Level.SEVERE, null, e);
-//         }
-//     }
+    static {
+        try (InputStream inputStream = DBConfig.class.getClassLoader()
+            .getResourceAsStream(PROPERTIES_FILE)) {
+            properties.load(inputStream);
+        } catch (IOException e) {
+            Logger.getLogger(DBConfig.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
 
-//     private DBConfig() {
+    private DBConfig() {
 
-//     }
+    }
 
-//     public static String getDbUrl() {
-//         return properties.getProperty("db.url");
-//     }
+    public static String getDbUrl() {
+        return properties.getProperty("db.url");
+    }
 
-//     public static String getDbUsername() {
-//         return properties.getProperty("db.username");
-//     }
+    public static String getDbUsername() {
+        return properties.getProperty("db.username");
+    }
 
-//     public static String getDbPassword() {
-//         return properties.getProperty("db.password");
-//     }
-// }
+    public static String getDbPassword() {
+        return properties.getProperty("db.password");
+    }
+}
 
 // /**
 //  * Клас DBConfig відповідає за зчитування конфігураційних даних для бази даних з
